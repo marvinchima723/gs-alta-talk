@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Die — 长寿从运动系统健康开始 | v10终版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e8e8e8;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 850px; margin: 0 auto; }
+
+        .header { text-align: center; margin-bottom: 50px; }
+        .title {
+            font-size: 2.3em; font-weight: 800;
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 12px;
+        }
+        .subtitle { color: #888; font-size: 1.1em; margin-top: 8px; }
+        .meta-info { font-size: 0.85em; color: #666; margin-top: 5px; }
+        .score-banner {
+            display: inline-block; background: linear-gradient(135deg, #feca57, #ff6b6b);
+            color: #1a1a2e; font-weight: 800; padding: 8px 24px; border-radius: 25px;
+            font-size: 1.2em; margin-top: 15px;
+        }
+
+        .section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px; padding: 28px 32px;
+            margin-bottom: 22px; border-left: 4px solid;
+            position: relative;
+        }
+        .section-opening { border-color: #a29bfe; }
+        .section-part1 { border-color: #ff6b6b; }
+        .section-part2 { border-color: #48dbfb; }
+        .section-part3 { border-color: #feca57; }
+        .section-closing { border-color: #74b9ff; }
+
+        .section-title {
+            font-size: 1.25em; font-weight: 700; margin-bottom: 12px;
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        }
+        .section-time {
+            font-size: 0.75em; color: #888;
+            background: rgba(255,255,255,0.1); padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .time-marker {
+            position: absolute; top: -8px; right: 20px;
+            background: #1a1a2e; padding: 2px 12px;
+            border-radius: 10px; font-size: 0.7em; color: #888; border: 1px solid #333;
+        }
+
+        .script-line {
+            font-size: 1.05em; line-height: 1.85; margin-bottom: 12px;
+            padding-left: 18px; position: relative;
+        }
+        .script-line::before {
+            content: "▶"; position: absolute; left: 0; color: #444; font-size: 0.7em;
+        }
+
+        .prompt {
+            background: rgba(253,203,110,0.15);
+            border: 1px dashed #feca57;
+            padding: 4px 12px; border-radius: 8px;
+            font-size: 0.85em; color: #feca57;
+            display: inline-block; margin: 8px 0;
+        }
+
+        .punchline {
+            background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(254,202,87,0.2));
+            padding: 14px 18px; border-radius: 12px; margin: 16px 0;
+            font-size: 1.1em; text-align: center; font-weight: 700;
+            color: #fff; text-shadow: 0 0 20px rgba(254,202,87,0.5);
+        }
+        .punchline-blue {
+            background: linear-gradient(135deg, rgba(72,219,251,0.2), rgba(116,185,255,0.2));
+            text-shadow: 0 0 20px rgba(72,219,251,0.4);
+        }
+        .punchline-green {
+            background: linear-gradient(135deg, rgba(0,184,148,0.2), rgba(162,155,254,0.2));
+            text-shadow: 0 0 20px rgba(0,184,148,0.4);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(255,107,107,0.3), rgba(254,202,87,0.3));
+            padding: 2px 8px; border-radius: 5px; font-weight: 600;
+        }
+        .highlight-blue {
+            background: linear-gradient(135deg, rgba(72,219,251,0.3), rgba(162,155,254,0.3));
+            padding: 2px 8px; border-radius: 5px; font-weight: 600;
+        }
+
+        .emotion-tag {
+            display: inline-block; font-size: 0.65em;
+            padding: 2px 8px; border-radius: 12px;
+            margin-left: 5px; vertical-align: middle;
+        }
+        .emotion-laugh { background: #ff6b6b33; color: #ff6b6b; }
+        .emotion-serious { background: #48dbfb33; color: #48dbfb; }
+        .emotion-story { background: #feca5733; color: #feca57; }
+
+        .key-moment {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; font-weight: 700;
+        }
+
+        .callback-tag {
+            border: 1px dashed #feca57; padding: 2px 8px;
+            border-radius: 5px; font-size: 0.75em; color: #feca57;
+        }
+
+        footer { text-align: center; margin-top: 50px; color: #666; font-size: 0.85em; line-height: 1.8; }
+
+        @media (max-width: 600px) {
+            .title { font-size: 1.7em; }
+            .section { padding: 20px 16px; }
+            .script-line { font-size: 0.98em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">🎙️ Don't Die — 长寿从运动系统健康开始</div>
+            <div class="subtitle">高山书院交通电台 · 15分钟脱口秀演讲稿 · v10终版</div>
+            <div class="meta-info">马驰 · 2026.04.23 波士顿→纽约大巴</div>
+            <div class="score-banner">🏆 评分：96/100 · S+</div>
+        </div>
+
+        <!-- 开场 -->
+        <div class="section section-opening">
+            <div class="time-marker">⏱️ 0:00 - 1:00 · 1分钟</div>
+            <div class="section-title">🎤 开场</div>
+
+            <div class="script-line">大家下午好！欢迎收听本期「高山交通电台」，我是马驰。<span class="emotion-tag emotion-laugh">😄</span></div>
+
+            <div class="prompt">【停顿1秒 · 环顾全场】</div>
+
+            <div class="script-line">说实话，第一次在大巴上做演讲，感觉有点像当年我在香港创业——晃晃悠悠，不知道下一秒会发生什么。但风景很好，就像今天我们要聊的话题：怎么让自己活得长、动得好。<span class="emotion-tag emotion-story">📖</span></div>
+
+            <div class="prompt">【问现场】有多少人平时有运动的习惯？举手让我看看。</div>
+
+            <div class="script-line">好，看到不少。那我再问一个——大巴上有没有50岁以上的朋友？<span class="emotion-tag emotion-laugh">😂</span></div>
+
+            <div class="prompt">【停顿1秒，等有人举手或摇头】</div>
+
+            <div class="script-line">没有？好，那你们更应该认真听——因为<strong class="key-moment">你的膝盖正在偷偷变老，只是你不知道而已</strong>。</div>
+
+            <div class="punchline">"今天的主题：don't die。但不是让你苟且偷生，是让你——活得带劲，动得爽。"</div>
+
+            <div class="prompt">【停顿2秒，等笑声过去】</div>
+        </div>
+
+        <!-- PART 1 -->
+        <div class="section section-part1">
+            <div class="time-marker">⏱️ 1:00 - 5:30 · 4.5分钟</div>
+            <div class="section-title">🔥 PART 1：运动损伤——预防 > 治疗</div>
+
+            <div class="script-line">先说个最近被问最多的问题——<span class="highlight">"马驰，我膝盖疼，打PRP有没有用？"</span></div>
+
+            <div class="script-line">问这话的是我同学，滑雪重度爱好者。上个雪季半月板III度撕裂——MRI上那条线，意味着你的软骨从中间断开了。<span class="emotion-tag emotion-laugh">😬</span></div>
+
+            <div class="script-line">医生让他静养，他问我的第一个问题是："<strong>我多久能回到雪道？</strong>"</div>
+
+            <div class="script-line">我说："你先别急，听我说完。"<span class="emotion-tag emotion-serious">💡</span></div>
+
+            <div class="script-line">——这就是今天我想说的第一件事：<span class="key-moment">运动系统健康，预防大于治疗。等你疼到睡不着觉再去看医生，成本是原来的10倍。</span></div>
+
+            <div class="punchline">"运动损伤最可怕的不是疼，是你以为'忍一忍就过去了'。"</div>
+
+            <div class="prompt">【停顿2秒，让笑声消化】</div>
+
+            <div class="script-line">拿我自己举个例子。<span class="emotion-tag emotion-story">📖</span></div>
+
+            <div class="script-line">小时候酷爱打篮球，习惯性肩脱臼。什么是习惯性肩脱臼？——<strong>打个喷嚏都能脱臼</strong>。你们别笑，是真的。</div>
+
+            <div class="script-line">每次脱臼我都想：算了，掰回来就行。结果呢？20岁那年，双肩做了两次手术，<span class="highlight">8颗钉子</span>。</div>
+
+            <div class="script-line">8颗钉子啊，兄弟们。现在我每次过安检，金属探测仪都滴滴响。我跟人家解释"我肩膀里有金属"，人家看我的眼神——"这是从漫威电影里跑出来的？"<span class="emotion-tag emotion-laugh">😂</span></div>
+
+            <div class="punchline">"误诊和拖延，让一个热爱运动的人，差点再也不能运动。"</div>
+
+            <div class="prompt">【停顿2秒】</div>
+
+            <div class="script-line">所以同学问我PRP，我说："你先别想着打针，先去做个MRI，评估一下撕裂位置和类型。如果真是桶柄样撕裂，你打100针PRP也没用。"<span class="emotion-tag emotion-serious">📋</span></div>
+
+            <div class="script-line">他后来真的去做了检查——结果需要手术。现在恢复中，效果很好。</div>
+
+            <div class="prompt">【语速放慢，重音落在"精准"】</div>
+
+            <div class="script-line">所以我常说：<strong>精准诊断，是最好的治疗第一步</strong>。</div>
+
+            <div class="script-line">那怎么预防？三件事：<span class="highlight">运动前热身、每周2次力量训练、疼痛超过两周不缓解就去看医生</span>。</div>
+
+            <div class="prompt">【转场 · 语速加快】现在你可能会问——诊断再准，治疗不还是"将就"？这就是下一个Part要说的。👇</div>
+        </div>
+
+        <!-- PART 2 -->
+        <div class="section section-part2">
+            <div class="time-marker">⏱️ 5:30 - 10:30 · 5分钟</div>
+            <div class="section-title">🤖 PART 2：AI骨科——大湾区的0到1</div>
+
+            <div class="script-line">说了这么多"反面教材"，给大家来点正的。<span class="emotion-tag emotion-serious">💡</span></div>
+
+            <div class="script-line">我现在做的，是用AI来改变骨科的诊断方式。</div>
+
+            <div class="prompt">【问现场】有多少人知道AI可以帮医生看片子？——现在中国1000家医院已经在用了。</div>
+
+            <div class="script-line">先给大家讲个故事——大疆。<span class="emotion-tag emotion-story">📖</span></div>
+
+            <div class="script-line">香港科技大学有个教授，叫李泽湘。他带出了一个学生，叫汪滔。汪滔后来创立了大疆——现在<strong>全球90%的无人机市场份额</strong>是他的。</div>
+
+            <div class="script-line">这就是大湾区模式：<span class="highlight-blue">香港教授的创意 + 深圳的供应链 = 全球第一</span>。</div>
+
+            <div class="script-line">红杉的沈南鹏看到了这个机会，联合李泽湘创立了HKX基金，专门投资港科大的创业团队。</div>
+
+            <div class="script-line">2011年，我拿到了HKX的第一笔投资，创立了Bone's Tech——做AI骨科智能诊断。<span class="emotion-tag emotion-laugh">😎</span></div>
+
+            <div class="script-line">当时所有人都说："骨科+AI？这能行吗？"</div>
+
+            <div class="script-line">我说："行不行不重要，临床数据说了算。"</div>
+
+            <div class="punchline punchline-blue">"我们把骨科诊断的准确率——从60%，提升到了90%。"</div>
+
+            <div class="prompt">【停顿2秒，等"哇"声】</div>
+
+            <div class="script-line">怎么做到的？传统方法是拍X光、看面积骨密度。但我们用<strong>QCT——定量CT，看体积骨密度</strong>，就像从二维照片升级到3D扫描。<span class="emotion-tag emotion-data">🔬</span></div>
+
+            <div class="script-line">后来我们开发了中国第一个<span class="highlight-blue">骨质量评估AI软件</span>，现在在北京协和医院、301医院、港大深圳医院等40余家三甲医院使用。</div>
+
+            <div class="script-line">更重要的是——<strong>我们制定了中国第一个骨质量评估的行业标准和临床指南</strong>。</div>
+
+            <div class="punchline punchline-blue">"从0到1，靠的是：大湾区供应链 + 香港国际化视野 + 临床需求倒逼创新。"</div>
+
+            <div class="prompt">【转场 · 情感下沉】</div>
+
+            <div class="script-line">我也经常想——<strong>如果当年有AI，我的肩膀会不会不一样？</strong></div>
+
+            <div class="script-line">诊断只是入口。真正改变治疗方式、让更多人"不动则已，动则无忧"的，是下一个故事。<span class="emotion-tag emotion-story">👉</span></div>
+        </div>
+
+        <!-- PART 3 -->
+        <div class="section section-part3">
+            <div class="time-marker">⏱️ 10:30 - 14:00 · 3.5分钟</div>
+            <div class="section-title">🦴 PART 3：从"将就"到"讲究"——PEEK植入物革命</div>
+
+            <div class="script-line">关节坏了，传统做法是"修"——换一个人工关节。<span class="emotion-tag emotion-serious">⚠️</span></div>
+
+            <div class="script-line">但这个"修"，有两个问题。</div>
+
+            <div class="script-line">第一，<strong>材料不匹配</strong>。传统金属关节的硬度，是骨的3-5倍。就像你穿高跟鞋踩在木地板上——高跟鞋很硬，木地板很软，时间长了，木地板会坏。骨头也一样，被金属慢慢"吃"掉。</div>
+
+            <div class="script-line">第二，<strong>寿命有限</strong>。金属关节15-20年要翻修，年轻人换了，晚年还得再挨一刀。</div>
+
+            <div class="punchline">"修复，是将就。增强，才是讲究。"</div>
+
+            <div class="prompt">【停顿1秒，让观众回味"高跟鞋"的画面】</div>
+
+            <div class="script-line">我们家族创立的iBone Healthcare，用了<strong>10年时间</strong>，完成了PEEK人工关节的临床试验。<span class="emotion-tag emotion-data">🔬</span></div>
+
+            <div class="script-line">PEEK是什么？是一种跟人体骨骼力学<strong>完美匹配</strong>的生物材料。它的弹性模量接近天然骨，不会产生"应力屏蔽"效应。</div>
+
+            <div class="script-line">打个比方：金属关节是<strong>高跟鞋踩木地板</strong>，PEEK关节是<strong>运动鞋踩草坪</strong>——完美匹配，自然和谐。<span class="emotion-tag emotion-laugh">😂</span></div>
+
+            <div class="punchline">"全球第一个PEEK人工关节。用了它，关节炎晚期患者可以真正实现'终身使用'的梦想。"</div>
+
+            <div class="script-line">苏州中科生物——我们的合作伙伴，也是国内PEEK骨科植入物的领军企业。他们的PEEK膝关节、髋关节、椎间融合器，已经在临床使用。<span class="emotion-tag emotion-data">🏭</span></div>
+
+            <div class="script-line">我岳母的经历也让我深刻理解这一点——<strong>让假体适应人体，而不是让人体适应假体</strong>。这是材料科学最大的进步。</div>
+
+            <div class="punchline">"最好的医疗不是事后修补，是事前设计。"</div>
+
+            <div class="script-line"><strong class="key-moment">不是让你活着，是让你活得有意思——而运动系统健康，是所有有意思的事的基础。</strong></div>
+        </div>
+
+        <!-- 收尾 -->
+        <div class="section section-closing">
+            <div class="time-marker">⏱️ 14:00 - 15:00 · 1分钟</div>
+            <div class="section-title">🎯 收尾</div>
+
+            <div class="script-line">今天的分享就三句话：<span class="emotion-tag emotion-laugh">🙌</span></div>
+
+            <div class="script-line">1️⃣ <strong>运动系统健康</strong>：预防大于治疗——热身、力量训练、疼痛不拖延</div>
+
+            <div class="script-line">2️⃣ <strong>AI赋能诊断</strong>：从60%到90%的准确率提升，让骨科精准医疗从大湾区走向全球</div>
+
+            <div class="script-line">3️⃣ <strong>材料革命</strong>：PEEK关节从"将就"到"讲究"，让终身使用成为现实</div>
+
+            <div class="punchline punchline-green">"高山说120岁，你膝盖先撑到80再说。"</div>
+
+            <div class="prompt">【转场 · callback】</div>
+
+            <div class="script-line">开场我说过，我肩膀里有<span class="callback-tag">8颗钉子</span>。现在每次过安检，滴滴响，我就跟人说——</div>
+
+            <div class="script-line"><strong>"这里面有高科技。"</strong></div>
+
+            <div class="prompt">【停顿1秒，让笑点发酵】</div>
+
+            <div class="script-line"><strong>8颗钉子，镶了AI的味道。</strong><span class="emotion-tag emotion-laugh">😂</span></div>
+
+            <div class="punchline punchline-green">"don't stop moving. 跳舞、打球、抱孙子、追公交——这些事，你值得一直做下去。"</div>
+
+            <div class="prompt">【彩蛋 · 语速放慢，重音】</div>
+
+            <div class="script-line" style="text-align: center; font-size: 1.1em; margin-top: 20px;">
+                最后送大家一句话——
+            </div>
+
+            <div class="punchline punchline-green" style="font-size: 1.15em;">
+                "你身上的每一个零件，都是<strong>限量版</strong>。别等它坏了才想起珍惜。"
+            </div>
+
+            <div class="prompt">【停顿3秒 · 等掌声/笑声】</div>
+
+            <div class="script-line" style="text-align: center; margin-top: 25px; font-size: 1.15em; color: #feca57;">
+                谢谢大家！纽约见。<span class="emotion-tag emotion-laugh">🗽</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>🎙️ 高山书院交通电台 · 马驰分享 · 2026.04.23</p>
+            <p>v10终版 · 评分96/100 · S+</p>
+            <p style="margin-top: 8px; color: #555; font-size: 0.8em;">
+                评分规则：/Users/mma/Dropbox/0-临床专家/高山书院波士顿/高山交通电台_评分规则.md<br>
+                评分追踪：/Users/mma/Dropbox/0-临床专家/高山书院波士顿/高山交通电台_评分追踪.md<br>
+                学习笔记：/Users/mma/Dropbox/0-临床专家/高山书院波士顿/高山交通电台_学习笔记_2026-04-22.md
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
